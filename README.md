@@ -13,6 +13,7 @@ Request ID looks similar to this `id-prefix:159132dd-1cd0-4a75-9227-4fef68765938
 The request ID is composed of two parts. Prefix and UUIDV4.
 * id-prefix
     * String or a function that returns a string
+* prefix seperator (string character to separate the prefix and unique part)
 * unique part (generated)
 
 > ⚠️ The prefix is mandatory field, and if not provided, the middleware will throw error at runtime. 
@@ -30,7 +31,7 @@ const reqidOptions = {
     idPrefix: process.env.REQUEST_ID_PREFIX,
 };
 
-app.use(expressReqid(reqidOPtions));
+app.use(expressReqid(reqidOptions));
 
 // ...
 ```
@@ -56,6 +57,7 @@ app.use(expressReqid(reqidOPtions));
 Almost everything is configurable in this library using the `ReqidOptions` object passed into the middleware. Some options like `idPrefix` are a required for the middleware to work whereas for the other options, the default values will be used.
 
 ### ReqidOptions
+
 ``` js
 // Example reqidOptions
 const ReqidOptions = {
@@ -68,7 +70,11 @@ const ReqidOptions = {
     prefixSeperator: ':',
 };
 ```
+> NOTE: Only `idPrefix` is mandatory. Rest are optional.
 
+<br>
+
+### ReqidOptions Configuration
 
 | Config Name      | Type               | Default      | Description                                                                                                            |
 |------------------|--------------------|--------------|------------------------------------------------------------------------------------------------------------------------|
@@ -105,7 +111,7 @@ It is disabled by default for security reasons. If enabled, then the middleware 
 > ☢️ If `useIdFromRequest` is enabled, make sure the header (of `headerName`) is removed at the API gateway for incoming requests. This is to prevent request id injection from the frontend.
 
 #### setInContext
-Express Reqid uses `@niveus/express-reqid` to set the request id in the context. By default, it does not uses context. If the value needs to be set in the context, then the context should be created in the Express app. Follow [@niveus/express-reqid tutorial](https://www.npmjs.com/package/@niveus/express-context?activeTab=readme) on how to enable it.
+Express Reqid uses `@niveus/express-reqid` to set the request id in the context. By default, it does not uses context. If the value needs to be set in the context, then the context should be created in the Express app. Follow [@niveus/express-context tutorial](https://www.npmjs.com/package/@niveus/express-context?activeTab=readme) on how to enable it.
 
 The value of `attribute` will be used to set the request id in the context.
 
