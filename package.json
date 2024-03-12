@@ -16,7 +16,7 @@
     "email": "opensource@niveussolutions.com"
   },
   "dependencies": {
-    "express-http-context": "^1.2.4"
+    "@niveus/express-context": "^0.0.2"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
