@@ -2,6 +2,7 @@
 coverage/
 .vscode/
 .eslintrc.json
+test/
 
 # Logs
 logs
