@@ -1,3 +1,10 @@
+[![Npm package version](https://badgen.net/npm/v/@niveus/express-reqid)](https://www.npmjs.com/package/@niveus/express-reqid)
+[![Npm package monthly downloads](https://badgen.net/npm/dm/@niveus/express-reqid)](https://www.npmjs.com/package/@niveus/express-reqid)
+[![GitHub issues](https://badgen.net/github/issues/niveussolutions/express-reqid)](https://gitHub.com/niveussolutions/express-reqid/issues/)
+[![GitHub contributors](https://img.shields.io/github/contributors/niveussolutions/express-reqid.svg)](https://GitHub.com/niveussolutions/express-reqid/graphs/contributors/)
+
+
+
 # Express Reqid
 
 An Express.js middleware to generate unique id for incoming requests. The ids are generated using UUIDV4. 
