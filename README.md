@@ -109,10 +109,38 @@ Express Reqid uses `@niveus/express-reqid` to set the request id in the context.
 
 The value of `attribute` will be used to set the request id in the context.
 
+> ⚠️ `@niveus/express-reqid` should be run before this middleware. If not, the context namespace won't be created and the request id cannot be 
+
 Example:
 
 ``` js
-// If setInContext is enabled, then the request id will be accessible fromt he context.
+// app.js file
+
+const expressContext = require('@niveus/express-context');
+const express = require('express');
+const { expressReqid } = require('@niveus/express-reqid');
+
+const app = express();
+
+// Use any third-party middleware here.
+
+// Express Context middleware
+app.use(expressContext.expressContextMiddleware());
+
+// Express Reqid options
+const reqidOptions = {
+    idPrefix: 'request-prefix',
+    setInContext: true,  // Enable context.
+};
+
+// Express Reqid Middleware.
+app.use(expressReqid(reqidOPtions));
+
+// ...
+
+
+
+//  ---- Somewhere in the code where `req` object is not available. ----
 
 const expressContext = require('@niveus/express-context');
 
