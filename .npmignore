@@ -2,6 +2,8 @@
 coverage/
 .vscode/
 .eslintrc.json
+test/
+jest.config.js
 
 # Logs
 logs

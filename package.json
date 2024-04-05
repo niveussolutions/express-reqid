@@ -5,7 +5,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "jest --verbose --coverage"
+    "test": "jest --config ./jest.config.js --collectCoverage --coverageDirectory=\"./coverage\" --ci --reporters=default --watchAll=false"
   },
   "author": "Prince Shaji <prince.shaji@niveussolutions.com>",
   "license": "MIT",

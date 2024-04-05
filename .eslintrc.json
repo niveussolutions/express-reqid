@@ -13,6 +13,9 @@
     "extends": [
         "eslint:recommended"
     ],
+    "ignorePatterns": [
+        "test/*.test.js"
+    ],
     "rules": {
         "indent": [
             "error",
