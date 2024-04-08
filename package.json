@@ -1,6 +1,6 @@
 {
   "name": "@niveus/express-reqid",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Express middleware for http unique request ID generation.",
   "main": "index.js",
   "types": "index.d.ts",
